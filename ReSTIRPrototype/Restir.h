@@ -476,14 +476,6 @@ private:
 
         assert(output.weight >= 0.f && output.weightSum >= 0.f);
 
-        //Track specific pixel at depth 0.
-        if(a_Pixel.pixelCoords.x == 68 && a_Pixel.pixelCoords.y == 170 && a_Depth == 0)
-        {
-            static int iteration = 0;
-            ++iteration;
-            std::cout << "Iteration: " << iteration << " | Weight: " << output.weight << " | Weight-Sum: " << output.weightSum << " | Samples: " << output.sampleCount << " | SolidAnglePDF: " << output.sample.solidAnglePdf << " |" << std::endl;
-        }
-
         a_Pixel.lightReservoirs[a_Depth] = output;
     }
 
